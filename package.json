@@ -1,5 +1,5 @@
 {
-    "name": "Marin-MD",
+    "name": "NEVT-MD",
     "version": "0.4.5",
     "description": "Bot Multi Device",
     "depecrated": false,
@@ -24,16 +24,16 @@
         "ShiraoriBOT",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/FahriAdison/Marin-MD-V3",
+    "homepage": "https://github.com/NevtBotz/NevtMD-V2",
     "author": {
-        "name": "Fahri"
+        "name": "Nevt"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/FahriAdison/Marin-MD-V3.git"
+        "url": "git+https://github.com/NevtBotz/NevtMD-V2.git"
     },
     "bugs": {
-        "url": "https://github.com/FahriAdison/Marin-MD-V3/issues"
+        "url": "https://github.com/NevtBotz/NevtMD-V2/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
