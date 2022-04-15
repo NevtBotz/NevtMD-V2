@@ -17,12 +17,12 @@ let anu =`╭───❑ 「 BALANCE 」 ❑────
 ├─ 📊 *Level*: ${user.level}
 ╰─❑ ✨ *Exp*:${user.exp}
 `
+     let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/bank.jpg')}, { upload: conn.waUploadToServer })
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
+           imageMessage: message.imageMessage,
            hydratedContentText: anu,
-           locationMessage: { 
-           jpegThumbnail: fs.readFileSync('./media/bank.jpg') }, 
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
