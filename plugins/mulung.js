@@ -16,9 +16,9 @@ let handler = async (m, { conn, usedPrefix, text }) => {
 					conn.reply(m.chat, `Yuk waktunya mulung lagi 😅`, m)
 					}, timeout)
 }
-handler.help = ['mulung']
+handler.help = ['memulung']
 handler.tags = ['rpg']
-handler.command = /^(mulung)/i
+handler.command = /^(memulung)/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
