@@ -9,7 +9,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   let { dl_link, thumb, title, filesize, filesizeF} = await yta(args[0], servers.includes(server) ? server : servers[0])
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
   let tumbnel = await await (await fetch(thumb)).buffer()
-  conn.sendButtonLoc(m.chat, tumbnel, `
+  conn.sendButtonImg(m.chat, tumbnel, `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 *${isLimit ? 'Pakai ': ''}Link Download:* 
