@@ -36,12 +36,12 @@ let anu =  `
 ${vid.url}
 
 `
+    let message = await prepareWAMessageMedia({ image: await (await fetch(thumb)).buffer() }, { upload: conn.waUploadToServer })
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
-           hydratedContentText: anu,
-           locationMessage: { 
-           jpegThumbnail: await (await fetch(thumb)).buffer() }, 
+           imageMessage: message.imageMessage,
+           hydratedContentText: anu, 
            hydratedFooterText: `jika video tidak sesuai
 silahkan ketik .yta link YouTube untuk mengunduh audio
 dan ketik .ytv link YouTube Untuk Mengunduh Video`,
