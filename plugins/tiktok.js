@@ -14,12 +14,12 @@ if (!text) return conn.reply(m.chat, 'Harap masukkan link\n\nContoh: .tiktok htt
 let anu = `*── 「 TIKTOK 」 ──*
 
 SILAHKAN PILIH`
+     let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/yuta.jpg')}, { upload: conn.waUploadToServer })
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
+           imageMessage: message.imageMessage,
            hydratedContentText: anu,
-           locationMessage: { 
-           jpegThumbnail: fs.readFileSync('./src/welcome.jpg')}, 
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
