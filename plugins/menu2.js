@@ -454,13 +454,13 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
+     let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/yuta.jpg')}, { upload: conn.waUploadToServer })
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
+           imageMessage: message.imageMessage,
            hydratedContentText: text.trim(),
-           locationMessage: { 
-           jpegThumbnail: fs.readFileSync('./media/yuta.jpg') },
-           hydratedFooterText: `Ⓛ limit | Ⓟ premium`,
+           hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
                displayText: 'My Github',
@@ -535,4 +535,3 @@ function clockString(ms) {
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
-
