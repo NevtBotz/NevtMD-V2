@@ -711,9 +711,9 @@ module.exports = {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
                         } finally {
-                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'BEBAN JOIN') :
-                                (chat.sBye || this.bye || conn.bye || 'BEBAN LEFT'))
-                                this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, '', "BEBAN MENDING OUT", "Nah bagus kalo out", null)
+                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'USER JOIN') :
+                                (chat.sBye || this.bye || conn.bye || 'USER LEFT'))
+                                this.sendButtonImg(id, await(await fetch(pp)).buffer(), text, '', "HAI KAK", "YAH KELUAR", null)
                                 }
                     }
                 }
